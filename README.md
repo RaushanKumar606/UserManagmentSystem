@@ -1,6 +1,6 @@
 # User Access Management System
 
-A full-stack application for managing user access requests to software systems. Built with Node.js, Express, React, and PostgreSQL with TypeORM.
+A full-stack application for managing user access requests to software systems. Built with Node.js, Express, React, and MongoDB.
 
 ## Features
 
@@ -10,13 +10,17 @@ A full-stack application for managing user access requests to software systems. 
 - **Access Requests**: Employees can request access to software
 - **Request Management**: Managers can approve or reject access requests
 
+## Default User Roles
 
-## Tech Stack
+- **Employee**: Can sign up, login, request software access
+- **Manager**: Can view and approve/reject access requests
+- **Admin**: Can create software, has full access
+
+## Technology Used for this project
 
 ### Backend
 - Node.js & Express.js
-- PostgreSQL
-- TypeORM
+- MongoBD
 - JWT Authentication
 - bcrypt for password hashing
 
@@ -34,7 +38,7 @@ A full-stack application for managing user access requests to software systems. 
 │   │   ├── config/         # Database and environment configuration
 │   │   ├── controllers/    # Route controllers
 │   │   ├── middleware/     # Custom middleware (auth, etc.)
-│   │   ├── models/         # TypeORM entities
+│   │   ├── models/         # Schema
 │   │   ├── routes/         # Express routes
 │   │   └── index.js        # Entry point
 │   ├── .env                # Environment variables
@@ -57,8 +61,8 @@ A full-stack application for managing user access requests to software systems. 
 ## Setup Instructions
 
 ### Prerequisites
-- Node.js (v14+)
-- PostgreSQL
+- Node.js (v20)
+- MongoDB
 
 ### Backend Setup
 
@@ -77,14 +81,11 @@ A full-stack application for managing user access requests to software systems. 
    PORT=5000
    DB_HOST=localhost
    DB_PORT=5432
-   DB_USERNAME=your_postgres_username
-   DB_PASSWORD=your_postgres_password
-   DB_NAME=user_access_management
    JWT_SECRET=your_jwt_secret_key
    JWT_EXPIRES_IN=24h
    ```
 
-4. Create a PostgreSQL database:
+4. Create a Mongo database:
    ```
    createdb user_access_management
    ```
@@ -132,8 +133,4 @@ A full-stack application for managing user access requests to software systems. 
 - `GET /api/requests/user` - Get current user's requests
 - `PATCH /api/requests/:id` - Update request status (Manager only)
 
-## Default User Roles
 
-- **Employee**: Can sign up, login, request software access
-- **Manager**: Can view and approve/reject access requests
-- **Admin**: Can create software, has full access
