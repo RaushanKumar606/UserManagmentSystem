@@ -1,0 +1,41 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+.env.*  # in case you have multiple env files like .env.development
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor-specific files
+.vscode/
+.idea/
+
+# Dependency directories
+.babel_cache/
+.cache/
+dist/
+build/
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Local database and runtime files
+*.sqlite
+*.db
+*.pid
+*.seed
+
+# Optional: Ignore uploads if stored locally
+uploads/
+public/uploads/
+tmp/
