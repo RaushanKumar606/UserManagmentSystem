@@ -31,6 +31,8 @@ app.use("/api/requests", requestRoutes);
 // Root route
 app.get("/", (req, res) => {
     res.send("User Access Management System API");
+    activeSession :true;
+    error: false;
 });
 
 // Initialize database and start server
