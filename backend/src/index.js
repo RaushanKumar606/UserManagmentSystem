@@ -1,9 +1,8 @@
 const express = require("express");
 const cors = require("cors");
-
+ require("dotenv").config();
 // Load environment variables
 try {
-    require("dotenv").config();
     console.log("Environment variables loaded successfully");
 } catch (error) {
     console.log("Warning: Could not load .env file, using default values");
@@ -30,13 +29,14 @@ app.use("/api/requests", requestRoutes);
 
 // Root route
 app.get("/", (req, res) => {
-    res.send("User Access Management System API");
-    activeSession :true;
-    error: false;
+    res.json({
+        message: "User Access Management System API",
+        activeSession: true,
+        error: false
+    });
 });
-
-// Initialize database and start server
-const PORT =  5000;
+// // Initialize database and start server
+const PORT = process.env.PORT ||8080;
 
 const startServer = async () => {
     try {
