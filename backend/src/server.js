@@ -7,7 +7,6 @@ try {
 } catch (error) {
     console.log("Warning: Could not load .env file, using default values");
 }
-
 const connectDB = require("./config/database");
 
 // Import routes
